@@ -1,0 +1,289 @@
+.contact-page {
+    height: 95vh;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    // Background visual effect like reference
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        background-image: url('../assets/images/contactbg.png'),
+            radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+        background-size: cover, 50px 50px;
+        animation: bgMove 15s linear infinite alternate, sparkle 6s ease-in-out infinite;
+        z-index: 0;
+        will-change: transform;
+        animation: bgMove 15s linear infinite alternate;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.9));
+        z-index: 1;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        z-index: 2;
+        color: #fff;
+        position: relative;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeSlideIn 1s ease-out forwards;
+
+        span {
+            background: linear-gradient(90deg, #ffcc00, #ff9900, #ffcc00);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: clamp(50px, 15vw, 100px);
+            height: 4px;
+            margin: 1rem auto 0;
+            background: linear-gradient(90deg, #ffcc00, transparent);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 480px) {
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 375px) {
+            letter-spacing: 0.15em;
+            line-height: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    form {
+        width: 100%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        padding-bottom: 2.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        z-index: 7;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        animation: glowBorder 4s ease-in-out infinite alternate,
+            floatUpDown 6s ease-in-out infinite;
+
+        label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem 0.1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #333;
+            background: #111;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+                border-color: #ffcc00;
+                box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-bottom: 0;
+
+            &:hover {
+                background: #ccc;
+                transform: translateY(-2px);
+            }
+
+            &:disabled {
+                background: #555;
+                cursor: not-allowed;
+            }
+
+            @media (max-width:375px) {
+                padding: 0.1rem;
+            }
+        }
+    }
+
+    // Responsive tweaks
+    @media (max-width: 600px) {
+        padding: 1rem;
+
+        form {
+            max-height: 70vh;
+            padding: 1.5rem;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+    }
+
+    .contact-footer {
+        width: 100%;
+        // background: linear-gradient(90deg, #111, #222);
+        color: #ccc;
+        text-align: center;
+        padding: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        letter-spacing: 0.05em;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 10;
+        position: relative;
+
+        p {
+            margin: 0;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 1;
+                color: #ffcc00;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding: 0.8rem;
+            font-size: clamp(0.75rem, 3vw, 0.9rem);
+        }
+    }
+
+}
+
+@keyframes bgMove {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.1) translate(-20px, -20px);
+    }
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowBorder {
+    0% {
+        border-color: rgba(255, 204, 0, 0.2);
+        box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    }
+
+    100% {
+        border-color: rgba(255, 204, 0, 0.6);
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        background-position: 0 0, 0 0;
+    }
+
+    50% {
+        background-position: 0 0, 25px 25px;
+    }
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes footerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}

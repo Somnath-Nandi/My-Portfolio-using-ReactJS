@@ -1,0 +1,278 @@
+.certificates-page {
+    font-family: 'Poppins', sans-serif;
+    background: url('../assets/images/certificates-bg.png') no-repeat center center fixed,
+        linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5rem 2rem 3rem 2rem;
+    box-sizing: border-box;
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 20%, rgba(119, 226, 255, 0.2), transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(50, 142, 253, 0.15), transparent 60%);
+        pointer-events: none;
+        animation: bgMove 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgMove {
+        0% {
+            background-position: 0% 0%, 100% 100%;
+        }
+
+        100% {
+            background-position: 20% 20%, 80% 80%;
+        }
+    }
+
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+        background: linear-gradient(90deg, #77e2ff, #328efd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 5rem;
+        text-shadow: 0 0 20px rgba(50, 142, 253, 0.6);
+        animation: gradientMove 3s infinite alternate, floaty 3s ease-in-out infinite;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid #77e2ff;
+        animation: typing 4s steps(20, end), blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    @keyframes blink {
+
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: #77e2ff
+        }
+    }
+
+    .certificate {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 2px solid transparent;
+        border-radius: 20px;
+        background-clip: padding-box;
+        padding: 2rem;
+        margin: 1rem 0;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), transparent 70%);
+            transform: rotate(25deg);
+            transition: all 0.6s ease;
+        }
+
+        &:hover::before {
+            top: -30%;
+            left: -30%;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .cert-icon {
+                font-size: 1.5rem;
+                animation: iconPulse 2s infinite;
+            }
+
+            @keyframes iconPulse {
+
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: gradientShift 3s ease infinite;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.3);
+                transition: left 0.4s ease;
+                z-index: -1;
+            }
+
+            &:hover {
+                background: linear-gradient(90deg, #dd2476, #ff512f);
+            }
+
+            &:hover::after {
+                left: 0;
+            }
+
+            @keyframes gradientShift {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+        }
+    }
+
+    .certificates-footer {
+        margin-top: auto; // Pushes footer to bottom
+        text-align: center;
+        padding: 1.5rem 0;
+        font-size: 0.9rem;
+        line-height: 1rem;
+        letter-spacing: 0.5px;
+        animation: fadeUp 1s ease-in-out;
+
+
+        &::before {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #77e2ff, #328efd, #ff512f, #dd2476);
+            background-size: 300% 300%;
+            animation: gradientMove 6s infinite alternate;
+            margin-bottom: 0.5rem;
+        }
+
+        &:hover {
+            text-shadow: 0 0 10px #77e2ff, 0 0 20px #328efd;
+            cursor: default;
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        .certificate {
+            padding: 1.5rem;
+        }
+
+        .certificate h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        .certificate {
+            padding: 1rem;
+        }
+
+        .certificate h3 {
+            font-size: 1rem;
+        }
+    }
+}
+
+@keyframes gradientMove {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floaty {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}

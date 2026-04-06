@@ -1,0 +1,13 @@
+@use 'home';
+@use 'nav';
+@use 'about';
+@use 'skills';
+@use 'contact';
+@use 'projects';
+@use 'certificates';
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5px;
+    font-weight: 400;
+}
