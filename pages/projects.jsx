@@ -23,19 +23,19 @@ const projects = () => {
 
   const projects = [
     {
-      title: "Scan2CSV",
-      description: "Easy to Use Doc Scanner to convert to CSV.",
-      link: "https://github.com/Somnath-Nandi/Scan2CSV",
+      title: "Gallery App",
+      description: "A React-based image gallery application that fetches and displays images from the Picsum Photos API with pagination support.",
+      link: "https://github.com/Somnath-Nandi/Gallery-App-using-ReactJS",
     },
     {
-      title: "Netflix UI clone",
-      description: "A UI clone of the Netflix home/login page.",
+      title: "Notes App",
+      description: "A simple React notes application built with Vite and Tailwind CSS.",
+      link: "https://github.com/Somnath-Nandi/Notes-App-using-ReactJS",
+    },
+    {
+      title: "Netflix UI Clone",
+      description: "A clone of the classic Netflix India home page.",
       link: "https://github.com/Somnath-Nandi/Netflix-UI-Clone",
-    },
-    {
-      title: "E-Learn Platform",
-      description: "An E-Learning Platform made via Django.",
-      link: "https://github.com/Somnath-Nandi/E-Learn-Platform",
     },
   ];
 

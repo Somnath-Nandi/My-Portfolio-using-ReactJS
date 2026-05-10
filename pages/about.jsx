@@ -23,9 +23,9 @@ const about = () => {
             <div className="intro-text">
               <h2>Hi, I'm Somnath Nandi</h2>
               <p>
-                I'm a passionate Information Technology enthusiast with a strong foundation in Web Development.
-                I believe in continuous learning, collaborative development, and creating user-focused solutions. Outside of work,
-                I enjoy gaming and web designing amongst other hobbies like globetrotting and nature gazing.
+                I'm a passionate Information Technology enthusiast with a strong basic foundation in Web Development.
+                I believe in continuous learning, teamwork, and creating user-friendly solutions. Outside of work,
+                I enjoy gaming and web designing amongst other hobbies like leisure walks and puzzle-solving.
               </p>
             </div>
           </div>
@@ -35,15 +35,15 @@ const about = () => {
           <div className="about-grid">
             <div className="card" style={{ '--delay': '0.2s' }}>
               <h3>Problem-Solving</h3>
-              <p>I thrive on solving complex challenges with clean, scalable solutions.</p>
+              <p>I thrive on solving complex challenges with clean, precise solutions.</p>
             </div>
             <div className="card" style={{ '--delay': '0.4s' }}>
               <h3>Team Collaboration</h3>
-              <p>I'm an effective communicator who values teamwork and knowledge sharing.</p>
+              <p>I'm an effective communicator who values teamwork and sharing knowledge.</p>
             </div>
             <div className="card" style={{ '--delay': '0.6s' }}>
               <h3>Fast Learner</h3>
-              <p>I quickly adapt to new tools and technologies to stay ahead in my field.</p>
+              <p>I quickly adapt to new tools and technologies to stay updated in my field.</p>
             </div>
           </div>
 
@@ -51,16 +51,16 @@ const about = () => {
           <h3 className="section-title">My Skills</h3>
           <div className="about-grid">
             <div className="card" style={{ '--delay': '0.2s' }}>
-              <h3>Web Development</h3>
-              <p>HTML, CSS, SCSS, JavaScript, React, Node JS, Express, MongoDB, MySQL</p>
+              <h3>Frontend Web Development</h3>
+              <p>HTML, CSS, SCSS, JavaScript, React</p>
             </div>
             <div className="card" style={{ '--delay': '0.4s' }}>
-              <h3>Android App Development</h3>
-              <p>Efficient and Scalable Android App development using Java.</p>
+              <h3>Core Programming</h3>
+              <p>Problem Solving using Programming skills in diverse languages like C, Java and Python</p>
             </div>
             <div className="card" style={{ '--delay': '0.6s' }}>
-              <h3>Cybersecurity</h3>
-              <p>Ethical Hacking, Penetration Testing, Bug Bounty Hunting.</p>
+              <h3>Database Management</h3>
+              <p>Designing and managing databases with SQL technologies using MySQL and PostgreSQL</p>
             </div>
           </div>
 
@@ -72,8 +72,8 @@ const about = () => {
               <p>I'm eager to explore intelligent systems and their real-world applications.</p>
             </div>
             <div className="card" style={{ '--delay': '0.4s' }}>
-              <h3>Advanced Cybersecurity</h3>
-              <p>I want to contribute to advanced Cybersecurity projects and collaborate globally.</p>
+              <h3>Efficient Backend Development</h3>
+              <p>I want to contribute to advanced Backend development projects and collaborate globally.</p>
             </div>
             <div className="card" style={{ '--delay': '0.6s' }}>
               <h3>Leadership</h3>
